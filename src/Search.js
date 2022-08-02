@@ -38,7 +38,7 @@ export default function Search() {
           onChange={handleKeywordChange}
         />
       </form>
-      <Results results={results} />
+      <Results results={results} key={results.id}/>
     </div>
   );
 }

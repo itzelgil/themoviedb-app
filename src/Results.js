@@ -7,15 +7,16 @@ export default function Results(props) {
   if (props.results) {
     return (
       <div className="Results">
-        <h3>{props.results[0].original_title}</h3>
-        {props.results.}
-        {/* {props.data.map(function (movies, index) {
-          return (
-            <div key={index}>
-              <Movies movies={movies} />
-            </div>
-          );
-        })} */}
+        {props.results.map((movie) => (
+          <Movies
+            key={movie.id}
+            title={movie.title}
+            popularity={movie.popularity}
+            release_date={movie.release_date}
+            image={movie.poster_path}
+            overview={movie.overview}
+          />
+        ))}
       </div>
     );
   } else {
