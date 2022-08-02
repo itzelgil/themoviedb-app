@@ -1,25 +1,31 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
+import Row from "react-bootstrap/Row";
 
-export default function Movies({
-  title,
-  popularity,
-  release_date,
-  image,
-  overview,
-}) {
+export default function Movies(props) {
   return (
-    <Card style={{ width: "18rem" }}>
-      <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
-      <Card.Body>
-        <Card.Title>{title}</Card.Title>
-        <Card.Text>{overview}</Card.Text>
-      </Card.Body>
-      <ListGroup className="list-group-flush">
-        <ListGroup.Item>{popularity}</ListGroup.Item>
-        <ListGroup.Item>Release date: {release_date}</ListGroup.Item>
-      </ListGroup>
-    </Card>
+    <div
+      className="card-container"
+      style={{ display: "inline-block", flexDirection: "row" }}
+    >
+      <Row className="card-container">
+        <Card
+          style={{
+            width: "18rem",
+            margin: "10px",
+          }}
+        >
+          <Card.Img
+            variant="top"
+            src={"https://image.tmdb.org/t/p/w780/" + props.image}
+            className="image"
+          />
+          <Card.Body>
+            <Card.Title>{props.title}</Card.Title>
+          </Card.Body>
+        </Card>
+      </Row>
+    </div>
   );
 }
