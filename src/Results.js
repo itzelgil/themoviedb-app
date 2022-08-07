@@ -15,6 +15,8 @@ export default function Results(props) {
               release_date={movie.release_date}
               image={movie.poster_path}
               overview={movie.overview}
+              rating={movie.vote_average}
+              name={movie.name}
             />
           ))}
       </div>

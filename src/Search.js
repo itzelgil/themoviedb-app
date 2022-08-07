@@ -30,15 +30,16 @@ export default function Search() {
 
   return (
     <div className="searchContainer">
-      <form onSubmit={search}>
+      <form>
         <input
           type="search"
           autoFocus={true}
           placeholder="Search a title"
           onChange={handleKeywordChange}
         />
+        <button onClick={search}>Search</button>
       </form>
-      <Results results={results} key={results.id}/>
+      <Results results={results} key={results.id} />
     </div>
   );
 }

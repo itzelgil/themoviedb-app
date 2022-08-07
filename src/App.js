@@ -3,8 +3,8 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import { Form } from "react-bootstrap";
 import Search from "./Search.js";
+
 import "./App.css";
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <Navbar bg="light" expand="lg">
         <Container fluid>
-          <Navbar.Brand href="#">
+          <Navbar.Brand href="/">
             <img src={logo} className="logo" alt="logo" />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
@@ -22,7 +22,7 @@ function App() {
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
-              <Nav.Link href="#action1">Home</Nav.Link>
+              <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="#action2">Link</Nav.Link>
               <NavDropdown title="Link" id="navbarScrollingDropdown">
                 <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
@@ -42,6 +42,7 @@ function App() {
         </Container>
       </Navbar>
       <Search />
+      <div className="container"></div>
     </div>
   );
 }
