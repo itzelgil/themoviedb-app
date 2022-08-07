@@ -39,8 +39,19 @@
 }
 
 .image-info {
-  max-width: 30%;
-  min-width: 100px;
   border-radius: 15px;
-  align-items: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.movie-title {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.rating,
+.release {
+  font-size: 18px;
 }

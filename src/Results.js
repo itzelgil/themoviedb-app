@@ -2,7 +2,7 @@ import React from "react";
 import Movies from "./Movies";
 
 export default function Results(props) {
-  console.log(props.results);
+  // console.log(props.results);
 
   if (props.results) {
     return (
@@ -17,8 +17,13 @@ export default function Results(props) {
               overview={movie.overview}
               rating={movie.vote_average}
               name={movie.name}
+              totalResults={movie.total_results}
+              totalPages={null}
+              page={props.page_num === 1}
             />
           ))}
+
+        <div className="pagination"></div>
       </div>
     );
   } else {

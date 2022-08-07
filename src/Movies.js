@@ -36,7 +36,7 @@ export default function Movies(props) {
       />
       <div className="title-hover">
         {isHovering && (
-          <h5>
+          <h5 className="title">
             {props.title} {props.name}
           </h5>
         )}
@@ -48,18 +48,30 @@ export default function Movies(props) {
             <Modal.Title></Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <img
-              src={"https://image.tmdb.org/t/p/w780/" + props.image}
-              className="image-info"
-              alt="movie-poster-info"
-            />
-            <h3>
-              {props.title} {props.name}
-            </h3>
-            <h4>Rating: {props.rating}</h4>
-            <h5>Release Date: {props.release_date}</h5>
-            <br></br>
-            <p>{props.overview}</p>
+            <div className="movie-info">
+              <div className="row">
+                <div className="col-6">
+                  <img
+                    src={"https://image.tmdb.org/t/p/w780/" + props.image}
+                    className="image-info"
+                    alt="movie-poster-info"
+                  />
+                </div>
+                <div className="col-4">
+                  <h3 className="movie-title">
+                    {props.title} {props.name}
+                  </h3>
+                  <h4 className="rating">Rating: {props.rating} ⭐️</h4>
+                  <h5 className="release">
+                    Release Date: {props.release_date}
+                  </h5>
+                </div>
+              </div>
+            </div>
+            <br />
+            <div className="row">
+              <p>{props.overview}</p>
+            </div>
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={handleClose}>

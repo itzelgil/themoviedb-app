@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Results from "./Results";
 import axios from "axios";
 
-export default function Search() {
+export default function Search(props) {
   let [keyword, setKeyword] = useState("");
   let [results, setResults] = useState("");
 
@@ -10,7 +10,7 @@ export default function Search() {
     // console.log(response.data.results[0].original_title);
     // console.log(response.data.results[0].overview);
     // console.log(response.data.results[0].poster_path);
-    console.log(response.data.results);
+    // console.log(response.data.results);
 
     setResults(response.data.results);
   }
@@ -18,9 +18,9 @@ export default function Search() {
   function search(event) {
     event.preventDefault();
     // alert(`Searching for ${keyword}`);
-
+    let currentPage = "1";
     let apiKey = "a6bf3f512c1cea4ef45df7c7029ebf76";
-    let apiUrl = `https://api.themoviedb.org/3/search/multi?api_key=${apiKey}&language=en-US&page=1&query=${keyword}`;
+    let apiUrl = `https://api.themoviedb.org/3/search/multi?api_key=${apiKey}&language=en-US&page=${currentPage}&query=${keyword}`;
     axios.get(apiUrl).then(handleResponse);
   }
 
@@ -39,7 +39,7 @@ export default function Search() {
         />
         <button onClick={search}>Search</button>
       </form>
-      <Results results={results} key={results.id} />
+      <Results results={results} key={results.id}  />
     </div>
   );
 }
