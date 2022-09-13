@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
+import notfound from "./notfound.png";
 
 export default function Movies(props) {
+  console.log(props.image);
   let [show, setShow] = useState(false);
   let [isHovering, setIsHovering] = useState(false);
 
@@ -29,7 +31,11 @@ export default function Movies(props) {
       onMouseOut={handleMouseOut}
     >
       <img
-        src={"https://image.tmdb.org/t/p/w780/" + props.image}
+        src={
+          props.image
+            ? "https://image.tmdb.org/t/p/w780/" + props.image
+            : notfound
+        }
         className="image"
         alt="movie-poster"
         onClick={handleShow}
@@ -52,7 +58,11 @@ export default function Movies(props) {
               <div className="row">
                 <div className="col-6">
                   <img
-                    src={"https://image.tmdb.org/t/p/w780/" + props.image}
+                    src={
+                      props.image
+                        ? "https://image.tmdb.org/t/p/w780/" + props.image
+                        : notfound
+                    }
                     className="image-info"
                     alt="movie-poster-info"
                   />
