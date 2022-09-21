@@ -2,7 +2,7 @@
 
 **Overview**
 
-This app was created for practice, it pulls data from [The Movie DB API] (https://developers.themoviedb.org/3)
+This app was created for practice, it pulls data from The Movie DB API --> https://developers.themoviedb.org/3
 
 **Features**
 
