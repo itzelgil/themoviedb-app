@@ -15,4 +15,5 @@ When clicking on any movie/serie you'll get a short description of the item.
 **Dev Dependencies**
 
 -Prettier
+
 -ReactJS
