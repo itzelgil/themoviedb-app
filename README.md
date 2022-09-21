@@ -13,5 +13,6 @@ When clicking on any movie/serie you'll get a short description of the item.
 **Live link**: https://themoviedb-app-itzel.netlify.app
 
 **Dev Dependencies**
+
 -Prettier
 -ReactJS
