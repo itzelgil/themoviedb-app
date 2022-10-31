@@ -3,7 +3,7 @@ import { Modal, Button } from "react-bootstrap";
 import notfound from "./notfound.png";
 
 export default function Movies(props) {
-  console.log(props.image);
+  // console.log(props.image);
   let [show, setShow] = useState(false);
   let [isHovering, setIsHovering] = useState(false);
 
@@ -47,6 +47,7 @@ export default function Movies(props) {
           </h5>
         )}
       </div>
+      
 
       <div className="movie-details">
         <Modal show={show} onHide={handleClose}>
@@ -91,5 +92,7 @@ export default function Movies(props) {
         </Modal>
       </div>
     </div>
+    
   );
+  
 }

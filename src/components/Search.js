@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Results from "./Results";
 import axios from "axios";
+import AppPagination from "./Pagination/AppPagination";
+import { Pagination } from "@mui/material";
 
 export default function Search(props) {
   let [keyword, setKeyword] = useState("");
@@ -28,18 +30,32 @@ export default function Search(props) {
     setKeyword(event.target.value);
   }
 
+  // function nextPage(event) {
+  //   event.preventDefault();
+  //   let currentPage = 1;
+  //   let page = currentPage++;
+  //   let apiKey = "a6bf3f512c1cea4ef45df7c7029ebf76";
+  //   let apiUrl = `https://api.themoviedb.org/3/search/multi?api_key=${apiKey}&language=en-US&page=${page}&query=${keyword}`;
+  //   axios.get(apiUrl).then(handleResponse);
+  // }
+
   return (
     <div className="searchContainer">
-      <form>
-        <input
-          type="search"
-          autoFocus={true}
-          placeholder="Search a title"
-          onChange={handleKeywordChange}
-        />
-        <button onClick={search}>Search</button>
-      </form>
-      <Results results={results} key={results.id}  />
+      <input
+        type="search"
+        autoFocus={true}
+        placeholder="Search a title"
+        onChange={handleKeywordChange}
+      />
+      <button onClick={search}>Search</button>
+
+      <Results results={results} key={results.id} />
+
+      <Pagination
+        style={{ display: "flex", justifyContent: "center" }}
+        count={10}
+        color="secondary"
+      />
     </div>
   );
 }

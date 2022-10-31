@@ -1,5 +1,5 @@
 import React from "react";
-import Movies from "./Movies";
+import Movies from "../Movies";
 
 export default function Results(props) {
   // console.log(props.results);
@@ -22,8 +22,6 @@ export default function Results(props) {
               page={props.page_num === 1}
             />
           ))}
-
-        <div className="pagination"></div>
       </div>
     );
   } else {

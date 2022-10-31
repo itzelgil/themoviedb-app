@@ -3,7 +3,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import Search from "./Search.js";
+import Search from "./components/Search.js";
 
 import "./App.css";
 
@@ -41,8 +41,9 @@ function App() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <Search />
-      <div className="container"></div>
+      <div className="container">
+        <Search />
+      </div>
     </div>
   );
 }
